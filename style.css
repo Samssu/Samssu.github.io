@@ -1,0 +1,351 @@
+/* Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* General Style for Navbar */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgb(5, 77, 116); /* Green semi-transparent background */
+    color: white;
+    padding: 15px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a, .nav-button {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-button:hover {
+    color: #f8c471;
+}
+
+/* Styling for the button */
+.nav-button {
+    padding: 10px 20px;
+    background-color: green; /* Green button background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links, .nav-button {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(0, 128, 0, 0.9); /* Dark green background for mobile menu */
+        flex-direction: column;
+        width: 300px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+}
+
+
+/* Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.linkedin-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077B5; /* Warna biru LinkedIn */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.linkedin-link:hover {
+    background-color: #005582; /* Warna lebih gelap saat hover */
+}
+
+
+/* Home Section Styling */
+.home-section {
+    background-image: url('images/heroku.jpg'); /* URL gambar background */
+    background-size: cover; /* Mengatur ukuran gambar agar menutupi seluruh section */
+    background-position: center; /* Menempatkan gambar di tengah */
+    padding: 100px 20px;
+    text-align: center;
+    color: white; /* Agar teks di atas background terlihat jelas */
+    position: relative;
+}
+.profile-pic {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* About Section Styling */
+.about-section {
+    background-color: #f9f9f9; /* Warna background yang lembut */
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    color: #333; /* Warna teks yang lebih gelap agar kontras dengan background */
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007BFF; /* Warna judul yang menarik */
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007BFF; /* Garis di bawah judul untuk mempertegas */
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px; /* Membatasi lebar teks agar lebih rapi */
+    margin: 0 auto;
+    color: #555;
+    padding: 20px;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/about-bg.jpg'); /* Ganti dengan gambar background */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Transparansi agar gambar tidak terlalu dominan */
+    z-index: -1; /* Membuat gambar background berada di belakang konten */
+}
+
+
+
+/* Skills Section Styling */
+.skills-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Agar gambar tetap proporsional */
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Projects Section Styling */
+.projects-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 15px;
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background-image: url('images/heroku01.jpg'); /* Path to the background image */
+    background-size: cover; /* Cover ensures the background covers the footer area */
+    background-position: center; /* Centers the background image in the footer */
+    color: white; /* Change text color to white for better visibility */
+    text-align: center; /* Centers the text inside the footer */
+    padding: 40px 20px; /* Padding for aesthetic spacing */
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Ensures the content is above the background */
+}
+
+footer .social-media a {
+    color: white; /* Ensures social media icons are white */
+    margin: 0 15px; /* Spacing between icons */
+    font-size: 24px; /* Icon size */
+}
+
+footer p, footer h2 {
+    margin-bottom: 10px; /* Spacing below paragraphs */
+}
+
+footer a {
+    text-decoration: none; /* Removes underline from links */
+    color: #f8c471; /* Specific color for links */
+}
+
+footer a:hover {
+    color: #ffffff; /* White color on hover for better visibility */
+}
+
+
+/* Responsive design for projects */
+@media screen and (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
